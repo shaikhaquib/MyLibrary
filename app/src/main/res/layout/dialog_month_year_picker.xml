@@ -1,0 +1,19 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="16dp">
+
+    <com.chanakya.testview.WheelView
+        android:id="@+id/month_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="start"/>
+
+    <com.chanakya.testview.WheelView
+        android:id="@+id/year_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"/>
+
+</RelativeLayout>
