@@ -5,5 +5,10 @@
     <color name="shimmer_color">#c2c2c2</color>
     <color name="shimmer_background_color">#FF5722</color>
     <color name="greyish_brown">#CDCFD0</color>
+    <color name="maroon">#982F35</color>
+    <color name="warning">#FFB800</color>
+    <color name="bronze">#f7bc96</color>
+    <color name="cardFill">#F8F9FB</color>
+    <color name="cardBorder">#E7E8E9</color>
 
 </resources>
