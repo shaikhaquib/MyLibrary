@@ -7,6 +7,14 @@
     android:orientation="horizontal"
     tools:context=".MainActivity">
 
+    <com.chanakya.testview.GraphView.IMBarChart
+        android:id="@+id/barChart"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!--
     <com.chanakya.testview.GraphView.IMPieChart
         android:id="@+id/pieChart"
         android:layout_width="match_parent"
@@ -15,6 +23,17 @@
         android:layout_marginVertical="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+-->
+
+    <!--
+    <com.chanakya.testview.GraphView.IMLineGraph
+        android:id="@+id/lineChart"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
