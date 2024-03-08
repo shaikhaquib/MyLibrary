@@ -62,19 +62,41 @@ class DataTableView @JvmOverloads constructor(
         binding.rowTitlesScrollView.setOnScrollChangeListener { _, _, scrollY, _, _ ->
             binding.verticalScrollView.scrollTo(0, scrollY)
         }
+
+        binding.mainHorizontalScrollView.overScrollMode = View.OVER_SCROLL_NEVER
+        binding.rowTitlesScrollView.overScrollMode = View.OVER_SCROLL_NEVER
+        binding.verticalScrollView.overScrollMode = View.OVER_SCROLL_NEVER
+        binding.horizontalScrollView.overScrollMode = View.OVER_SCROLL_NEVER
     }
+
+    private fun getDimenInt(id: Int): Int = context.resources.getDimensionPixelSize(id)
+    private fun getDimenFloat(id: Int): Float = context.resources.getDimension(id)
 
     fun createTable(
         tableData: TableData,
         showVerticalDivider: Boolean = true,
         showHorizontalDivider: Boolean = true,
-        CELL_HEIGHT: Int = ViewGroup.LayoutParams.WRAP_CONTENT,
-        MIN_CELL_WIDTH: Int = 120,
+        showTitleDivider:Boolean = false,
+        CELL_HEIGHT: Int = getDimenInt(R.dimen.dimen_40dp),
+        MIN_CELL_WIDTH: Int = getDimenInt(R.dimen.dimen_122dp),
         MAX_CELL_WIDTH: Int? = null,
-        DIVIDER_SIZE: Int = 1,
-
-        ) {
+        DIVIDER_SIZE: Int = getDimenInt(R.dimen.dimen_1dp),
+        displayTopHeader: Boolean = true,
+        displayLeftHeader: Boolean = true,
+        topHeaderBackGroundColor: Int? = null,
+        leftHeaderBackGroundColor: Int? = null,
+        rowBackgroundColor: Int? = null,
+        topHeaderTextColor: Int? = null,
+        leftHeaderTextColor: Int? = null
+    ) {
         // Create table rows and cells
+
+        topHeaderBackGroundColor?.let {
+            binding.colunmBackground.setBackgroundColor(it)
+        }
+        leftHeaderBackGroundColor?.let {
+            binding.rowTitlesScrollView.setBackgroundColor(it)
+        }
         for (i in tableData.rowTitles.indices) {
             val tableRow = TableRow(context)
             tableRow.layoutParams = TableLayout.LayoutParams(
@@ -87,11 +109,18 @@ class DataTableView @JvmOverloads constructor(
                 cellLayout.orientation = LinearLayout.HORIZONTAL
 
                 val textView = TextView(context)
+                //textView.setTextAppearance(R.style.LabelLargeRegular)
                 textView.layoutParams = LinearLayout.LayoutParams(
                     ViewGroup.LayoutParams.WRAP_CONTENT,
                     CELL_HEIGHT
                 )
                 textView.minWidth = MIN_CELL_WIDTH
+                textView.setPadding(
+                    0,
+                    getDimenInt(R.dimen.dimen_12dp),
+                    0,
+                    getDimenInt(R.dimen.dimen_12dp)
+                )
                 if (MAX_CELL_WIDTH != null) {
                     textView.maxWidth = MAX_CELL_WIDTH
                 }
@@ -107,7 +136,7 @@ class DataTableView @JvmOverloads constructor(
                         DIVIDER_SIZE,
                         LinearLayout.LayoutParams.MATCH_PARENT
                     )
-                    verticalDivider.setBackgroundColor(Color.BLACK)
+                    verticalDivider.setBackgroundColor(ContextCompat.getColor(context,R.color.cardBorder))
                     cellLayout.addView(verticalDivider)
                 }
 
@@ -123,25 +152,51 @@ class DataTableView @JvmOverloads constructor(
                     LinearLayout.LayoutParams.MATCH_PARENT,
                     DIVIDER_SIZE
                 )
-                horizontalDivider.setBackgroundColor(Color.BLACK)
+                horizontalDivider.setBackgroundColor(ContextCompat.getColor(context,R.color.cardBorder))
                 binding.tableLayout.addView(horizontalDivider)
             }
 
             // Set background color for odd rows
-            if (i % 2 != 0) {
-                tableRow.setBackgroundColor(Color.LTGRAY)
+            if (rowBackgroundColor != null) {
+                tableRow.setBackgroundColor(rowBackgroundColor)
+            } else if (i % 2 != 0) {
+                tableRow.setBackgroundColor(ContextCompat.getColor(context, R.color.cardBorder))
+            } else {
+                tableRow.setBackgroundColor(ContextCompat.getColor(context, R.color.cardBorder))
             }
         }
 
         // Create column titles with dividers
         val columnTitleRow = TableRow(context)
         for (i in tableData.columnTitles.indices) {
+
+            if (showTitleDivider && i == 0) {
+                val verticalDivider = View(context)
+                verticalDivider.layoutParams =
+                    TableRow.LayoutParams(DIVIDER_SIZE, TableRow.LayoutParams.MATCH_PARENT)
+                verticalDivider.setBackgroundColor(ContextCompat.getColor(context,R.color.cardBorder))
+                columnTitleRow.addView(verticalDivider)
+            }
+
             val textView = TextView(context)
+            //textView.setTextAppearance(R.style.BodySemibold2)
             textView.layoutParams = TableRow.LayoutParams(
                 ViewGroup.LayoutParams.WRAP_CONTENT,
                 CELL_HEIGHT
             )
             textView.minWidth = MIN_CELL_WIDTH
+            textView.setPadding(
+                0,
+                getDimenInt(R.dimen.dimen_12dp),
+                0,
+                getDimenInt(R.dimen.dimen_12dp)
+            )
+
+            if(topHeaderTextColor != null){
+                textView.setTextColor(topHeaderTextColor)
+            }else {
+                textView.setTextColor(ContextCompat.getColor(context,R.color.cardBorder))
+            }
             if (MAX_CELL_WIDTH != null) {
                 textView.maxWidth = MAX_CELL_WIDTH
             }
@@ -151,52 +206,69 @@ class DataTableView @JvmOverloads constructor(
             columnTitleRow.addView(textView)
 
             // Add vertical divider
-            if (showVerticalDivider && i < tableData.columnTitles.size - 1) {
+            if (showTitleDivider && i < tableData.columnTitles.size - 1) {
                 val verticalDivider = View(context)
                 verticalDivider.layoutParams =
                     TableRow.LayoutParams(DIVIDER_SIZE, TableRow.LayoutParams.MATCH_PARENT)
-                verticalDivider.setBackgroundColor(Color.BLACK)
+                verticalDivider.setBackgroundColor(ContextCompat.getColor(context,R.color.cardBorder))
                 columnTitleRow.addView(verticalDivider)
             }
         }
-        binding.columnTitlesLayout.addView(columnTitleRow)
+        if (displayTopHeader)
+            binding.columnTitlesLayout.addView(columnTitleRow)
 
         // Add horizontal divider under column titles
-        if (showHorizontalDivider) {
+        if (showTitleDivider) {
             val horizontalDivider = View(context)
             horizontalDivider.layoutParams = LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 DIVIDER_SIZE
             )
-            horizontalDivider.setBackgroundColor(Color.BLACK)
-            binding.columnTitlesLayout.addView(horizontalDivider)
+            horizontalDivider.setBackgroundColor(ContextCompat.getColor(context,R.color.cardBorder))
+            if (displayTopHeader && showTitleDivider)
+                binding.columnTitlesLayout.addView(horizontalDivider)
         }
 
         // Create row titles with dividers
         for (i in tableData.rowTitles.indices) {
             val textView = TextView(context)
+          //  textView.setTextAppearance(R.style.BodySemibold2)
             textView.layoutParams = LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.WRAP_CONTENT,
                 CELL_HEIGHT
             )
             textView.minWidth = MIN_CELL_WIDTH
+            if(leftHeaderTextColor != null){
+                textView.setTextColor(leftHeaderTextColor)
+            }else {
+          //      textView.setTextColor(ContextCompat.getColor(context,R.color.grey_140))
+            }
+            textView.setPadding(
+                0,
+                getDimenInt(R.dimen.dimen_12dp),
+                0,
+                getDimenInt(R.dimen.dimen_12dp)
+            )
+
             if (MAX_CELL_WIDTH != null) {
                 textView.maxWidth = MAX_CELL_WIDTH
             }
             textView.gravity = Gravity.CENTER
             textView.text = tableData.rowTitles[i]
 
-            binding.rowTitlesLayout.addView(textView)
+            if (displayLeftHeader)
+                binding.rowTitlesLayout.addView(textView)
 
             // Add horizontal divider
-            if (showHorizontalDivider && i < tableData.rowTitles.size - 1) {
+            if (showTitleDivider && i < tableData.rowTitles.size - 1) {
                 val horizontalDivider = View(context)
                 horizontalDivider.layoutParams = LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.MATCH_PARENT,
                     DIVIDER_SIZE
                 )
-                horizontalDivider.setBackgroundColor(Color.BLACK)
-                binding.rowTitlesLayout.addView(horizontalDivider)
+              //  horizontalDivider.setBackgroundColor(ContextCompat.getColor(context,R.color.grey_70))
+                if (displayLeftHeader && showTitleDivider)
+                    binding.rowTitlesLayout.addView(horizontalDivider)
             }
         }
     }
@@ -204,6 +276,6 @@ class DataTableView @JvmOverloads constructor(
     data class TableData(
         val columnTitles: List<String>,
         val rowTitles: List<String>,
-        val tableData: List<List<String>> // Each inner list represents a row of data in the table
-    )
+        val tableData: List<List<String>> // Each inner list represents a row of data in the table
+        )
 }
