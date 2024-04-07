@@ -1,14 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
     <color name="shimmer_color">#c2c2c2</color>
     <color name="shimmer_background_color">#F3975D</color>
     <color name="greyish_brown">#CDCFD0</color>
     <color name="maroon">#982F35</color>
-    <color name="warning">#FFB800</color>
     <color name="bronze">#f7bc96</color>
     <color name="cardFill">#F8F9FB</color>
     <color name="cardBorder">#E7E8E9</color>
+
+    <color name="yourColor">#e75748</color>
+
+    <color name="primary_orange">#F0792E</color>
+    <color name="primary_orange_80">#F7B68D</color>
+    <color name="primary_orange_90">#F3975D</color>
+    <color name="primary_orange_110">#DB5E10</color>
+    <color name="primary_orange_100">#F0792E</color>
+    <color name="primary_orange_120">#AB4A0C</color>
+
+    <color name="secondary_marron">#982F35</color>
+    <color name="secondary_marron_80">#CE5F66</color>
+    <color name="secondary_marron_90">#BF3B43</color>
+    <color name="secondary_marron_110">#712327</color>
+    <color name="secondary_marron_120">#4A171A</color>
+
+    <color name="tertiary_blue">#20446C</color>
+    <color name="tertiary_blue_80">#3774B9</color>
+    <color name="tertiary_blue_90">#2B5C92</color>
+    <color name="tertiary_blue_110">#142A43</color>
+    <color name="tertiary_blue_120">#091420</color>
+
+    <color name="pastel_blue">#E3EDF8</color>
+    <color name="pastel_blue_80">#F7FAFC</color>
+    <color name="pastel_blue_90">#EBF1F8</color>
+    <color name="pastel_blue_110">#99ADC2</color>
+    <color name="pastel_blue_120">#7993AF</color>
+
+    <color name="pastel_brown">#E3E0D0</color>
+    <color name="pastel_brown_90">#F6F5F0</color>
+    <color name="pastel_brown_110">#CFCAAF</color>
+
+    <color name="pastel_green">#E2F0EA</color>
+    <color name="pastel_green_90">#E5F4EE</color>
+    <color name="pastel_green_110">#BFDED1</color>
+
+    <color name="pastel_peach">#FAEFF0</color>
+    <color name="pastel_peach_90">#FDF4F4</color>
+    <color name="pastel_peach_110">#EEC9CC</color>
+
+    <color name="pastel_amber">#FDE9DD</color>
+    <color name="pastel_amber_90">#FAEFE8</color>
+    <color name="pastels_amber_100">#FAEFE8</color>
+    <color name="pastel_amber_110">#FACAAD</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="black_alpha_80">#CC000000</color>
+    <color name="black_alpha_60">#99000000</color>
+    <color name="bg_grey">#F9F9F9</color>
+
+    <color name="cool_grey">#F8F9FB</color>
+    <color name="cool_grey_90">#EFF1F6</color>
+    <color name="cool_grey_110">#FCFCFD</color>
+
+    <color name="grey">#979B9F</color>
+    <color name="grey_90">#B2B5B8</color>
+    <color name="grey_80">#CDCFD0</color>
+    <color name="grey_70">#E7E8E9</color>
+    <color name="grey_60">#E7E7E7</color>
+    <color name="grey_110">#7D8287</color>
+    <color name="grey_120">#64696D</color>
+    <color name="grey_130">#4C4F52</color>
+    <color name="grey_140">#333638</color>
+    <color name="grey_150">#202428</color>
+
+    <color name="success">#008F52</color>
+    <color name="success_90">#00C26F</color>
+    <color name="success_110">#005C35</color>
+
+    <color name="warning">#FFB800</color>
+    <color name="warning_90">#FFC633</color>
+    <color name="warning_110">#CC9300</color>
+
+    <color name="error">#D8272D</color>
+    <color name="error_90">#E05257</color>
+    <color name="error_110">#AD1F24</color>
+
+    <color name="information">#3773FF</color>
+    <color name="information_90">#6B97FF</color>
+    <color name="information_110">#054FFF</color>
+
+    <color name="primary_text_color">#202428</color>
+    <color name="secondary_text_color">#7D8287</color>
+    <color name="divider_color">#F7F7F7</color>
+    <color name="tertiary_text_color">#4C4F52</color>
+
+    <color name="pre_confirm_end">#EF8C24</color>
+    <color name="pre_confirm_start">#F06837</color>
+    <color name="fcard_back">#E2DFD0</color>
+
+    <color name="transparent_color">#99000000</color>
+    <color name="shadow_color1">#0D000000</color>
+    <color name="shadow_color2">#08000000</color>
+    <color name="indicator_color">#FFC4AE</color>
+    <color name="disable_color">#F0F0F0</color>
+    <color name="info_unit_color">#66F3D7C5</color>
+
+    <color name="mint_red">#E9E6DA</color>
+
+    <color name="grey_bank">#F8F8FA</color>
+    <color name="grey_tertiary_blue">#0820446C</color>
+    <color name="grey_90_alpha">#66B2B5B8</color>
+
 
 </resources>

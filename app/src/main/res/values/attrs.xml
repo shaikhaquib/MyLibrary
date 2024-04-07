@@ -37,4 +37,25 @@
         <attr name="left_button_src" format="reference" />
         <attr name="right_button_src" format="reference" />
     </declare-styleable>
+
+    <declare-styleable name="ContinuousSliderDff">
+        <attr name="android:stepSize" format="float" />
+        <attr name="android:valueFrom" format="float" />
+        <attr name="android:valueTo" format="float" />
+        <attr name="android:value" format="float" />
+        <attr name="trackColorActive" format="color" />
+        <attr name="trackColorInActive" format="color" />
+        <attr name="tickColorActive" format="color" />
+        <attr name="tickColorInactive" format="color" />
+        <attr name="sliderLabel" format="boolean" />
+        <attr name="sliderLabelText" format="string" />
+        <attr name="trackHeight" />
+        <attr name="thumbColor" />
+        <attr name="thumbRadius" />
+        <attr name="thumbStrokeWidth" />
+        <attr name="thumbStrokeColor" />
+        <attr name="thumbTextPadding" format="dimension" />
+        <attr name="android:thumbOffset" />
+        <attr name="decimalFormat" format="boolean" />
+    </declare-styleable>
 </resources>

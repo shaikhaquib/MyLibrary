@@ -2,51 +2,39 @@ package com.chanakya.testview
 
 import android.graphics.Color
 import android.os.Bundle
-import android.view.Gravity
 import android.view.View
-import android.view.ViewGroup
-import android.widget.HorizontalScrollView
-import android.widget.LinearLayout
-import android.widget.ScrollView
-import android.widget.TableLayout
-import android.widget.TableRow
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.widget.NestedScrollView
-import com.chanakya.testview.view.DataTableView
+import androidx.core.view.ViewCompat
+import com.chanakya.testview.databinding.ActivityMainBinding
+import com.chanakya.testview.shadow.ShadowProperty
+import com.chanakya.testview.shadow.ShadowViewDrawable
 
 
 class MainActivity : AppCompatActivity() {
 
-    private companion object {
-        const val NUM_ROWS = 20
-        const val NUM_COLS = 10
-    }
-
-    private lateinit var tableData: DataTableView.TableData
-
+    lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        // Initialize table data
-        tableData = DataTableView.TableData(
-            columnTitles = List(NUM_COLS) { i -> "C${i + 1}" },
-            rowTitles = List(NUM_ROWS) { i -> "R${i + 1}" },
-            tableData = List(NUM_ROWS) { i ->
-                List(NUM_COLS) { j -> "Data $i$j" }
-            }
-        )
-
-        val dataTableView = findViewById<DataTableView>(R.id.dataTableView)
-
-        dataTableView.createTable(tableData)
-
-     /*   horizontalScrollView.setOnTouchListener { v, event -> true };
-        rowTitlesScrollView.setOnTouchListener { v, event -> true };*/
+        // all side shadow
+        // all side shadow
 
 
-        // Synchronize horizontal scrolling of column titles and the table
+// only all sides except top shadow
+
+// only all sides except top shadow
+        val sp = ShadowProperty()
+            .setShadowColor(0x770000FF)
+            .setShadowDy(10)
+            .setShadowRadius(10)
+            .setShadowColor(Color.RED)
+            .setShadowSide(ShadowProperty.BOTTOM)
+        val sd = ShadowViewDrawable(sp, Color.TRANSPARENT, 0f, 0f)
+        ViewCompat.setBackground(binding.lil, sd)
+        ViewCompat.setLayerType(binding.lil, View.LAYER_TYPE_SOFTWARE, null)
+
 
     }
 

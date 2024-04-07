@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/seekBarRootView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <SeekBar
+        android:id="@+id/seekBarIndicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layoutDirection="ltr"
+        android:clickable="false"
+        android:focusable="false"
+        android:enabled="false"
+        android:paddingHorizontal="@dimen/dimen_24dp"
+        android:visibility="visible"
+        android:progressDrawable="@drawable/progresswhite" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/slider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:haloRadius="@dimen/dimen_0dp"
+        app:tickVisible="true"
+        app:labelBehavior="gone"
+        app:thumbColor="@color/white"
+        app:thumbRadius="@dimen/dimen_10dp"
+        app:thumbStrokeColor="@color/grey_130"
+        app:thumbStrokeWidth="@dimen/dimen_2dp"
+        app:tickColorActive="@color/primary_orange"
+        app:tickColorInactive="@color/grey"
+        app:trackColorActive="@color/primary_orange"
+        app:trackColorInactive="@color/grey_60"
+        app:trackHeight="@dimen/dimen_6dp" />
+</LinearLayout>
