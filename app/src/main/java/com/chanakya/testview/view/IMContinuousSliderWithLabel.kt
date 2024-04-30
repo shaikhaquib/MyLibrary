@@ -5,6 +5,7 @@ import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
+import android.os.Build
 import android.os.Handler
 import android.os.Looper
 import android.util.AttributeSet
@@ -17,8 +18,8 @@ import android.widget.SeekBar
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import com.chanakya.testview.R
-import com.chanakya.testview.databinding.SliderContinuosWithLabelBinding
 import com.google.android.material.slider.Slider
+import com.chanakya.testview.databinding.SliderContinuosWithLabelBinding
 import java.text.DecimalFormat
 import kotlin.math.roundToInt
 import kotlin.properties.Delegates
@@ -34,10 +35,10 @@ class IMContinuousSliderWithLabel @JvmOverloads constructor(
     private var sliderValue by Delegates.notNull<Float>()
     var indicatorView: View? = null
     val binding: SliderContinuosWithLabelBinding
-    private var sliderLabelText= ""
-    var isUnEventSteps : Boolean = false
-    private var isDecimalFormat : Boolean = false
-    var listItemArr : List<Int>? = null
+    private var sliderLabelText = ""
+    var isUnEventSteps: Boolean = false
+    private var isDecimalFormat: Boolean = false
+    var listItemArr: List<Int>? = null
     var onSliderChangeListener: ((Int) -> Unit)? = null
     var changeListener: SeekbarChangeListener? = null
     var sliderListener: OnSliderTouchListener? = null
@@ -47,15 +48,10 @@ class IMContinuousSliderWithLabel @JvmOverloads constructor(
     init {
         // Load attributes
         binding = SliderContinuosWithLabelBinding.inflate(
-                LayoutInflater.from(context),
-                this, true
+            LayoutInflater.from(context),
+            this, true
         )
-        // Assuming a padding value that accommodates the size of the custom thumb drawable
-       /* val sidePadding = resources.getDimensionPixelSize(R.dimen.dimen_32dp)
-        binding.seekBarIndicator.setPadding(sidePadding, 0, sidePadding, 0)*/
 
-        // Important: Set clipToPadding to false to allow the thumb to be drawn outside the padding area
-     //m   binding.slider.clipToPadding = false
         setComponentValue(attrs, context)
         doTheMagicIn(context)
     }
@@ -71,7 +67,7 @@ class IMContinuousSliderWithLabel @JvmOverloads constructor(
 
                 slider.thumbRadius = resources.getDimensionPixelSize(R.dimen.dimen_12dp)
                 slider.thumbStrokeWidth = resources.getDimension(R.dimen.dimen_6dp)
-                slider.setThumbStrokeColorResource(R.color.primary_orange_110)
+                slider.setThumbStrokeColorResource(R.color.primary_orange_100)
             }
 
 
@@ -91,20 +87,24 @@ class IMContinuousSliderWithLabel @JvmOverloads constructor(
         })
 
         binding.slider.addOnChangeListener(
-                Slider.OnChangeListener { slider, value, fromUser ->
-                    binding.seekBarIndicator.progress = slider.value.toInt()
-                })
+            Slider.OnChangeListener { slider, value, fromUser ->
+                binding.seekBarIndicator.progress = slider.value.toInt()
+            })
 
         binding.seekBarIndicator.setOnSeekBarChangeListener(object :
             SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progressValue: Int, p2: Boolean) {
-                Log.d("progressValue",""+progressValue + " start ${seekBar?.progress} end ${seekBar?.max}")
-               //binding.seekBarIndicator.progress = progressValue
-                changeListener?.onProgress(seekBar,progressValue)
-                if(isUnEventSteps){
+                Log.d(
+                    "progressValue",
+                    "" + progressValue + " start ${seekBar?.progress} end ${seekBar?.max}"
+                )
+                //binding.seekBarIndicator.progress = progressValue
+                changeListener?.onProgress(seekBar, progressValue)
+                if (isUnEventSteps) {
                     onSliderChangeListener?.invoke(listItemArr?.get(progressValue) ?: 0)
-                    seekBar!!.thumb = getThumb(listItemArr?.get(progressValue) ?: 0, indicatorView!!)
-                }else {
+                    seekBar!!.thumb =
+                        getThumb(listItemArr?.get(progressValue) ?: 0, indicatorView!!)
+                } else {
                     onSliderChangeListener?.invoke(progressValue)
                     seekBar!!.thumb = getThumb(progressValue, indicatorView!!)
                 }
@@ -125,18 +125,18 @@ class IMContinuousSliderWithLabel @JvmOverloads constructor(
         binding.seekBarIndicator.thumb = getThumb(binding.slider.valueFrom.toInt(), indicatorView!!)
     }
 
-    private fun  getThumb(progress: Int, indicator: View): Drawable {
-        (indicator.findViewById<View>(R.id.progress_text) as TextView).text = if(isDecimalFormat){
+    private fun getThumb(progress: Int, indicator: View): Drawable {
+        (indicator.findViewById<View>(R.id.progress_text) as TextView).text = if (isDecimalFormat) {
             "${decim.format(progress)}$sliderLabelText"
-        }else {
+        } else {
             "$progress$sliderLabelText"
         }
 
         indicator.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED)
         val bitmap = Bitmap.createBitmap(
-                indicator.measuredWidth,
-                indicator.measuredHeight,
-                Bitmap.Config.ARGB_8888
+            indicator.measuredWidth,
+            indicator.measuredHeight,
+            Bitmap.Config.ARGB_8888
         )
         val canvas = Canvas(bitmap)
         indicator.layout(0, 0, indicator.measuredWidth, indicator.measuredHeight)
@@ -182,37 +182,55 @@ class IMContinuousSliderWithLabel @JvmOverloads constructor(
             binding.slider.trackHeight = trackHeight
         }
 
-        sliderLabelText(attrsDataArray.getString(R.styleable.ContinuousSliderDff_sliderLabelText).orEmpty())
+        sliderLabelText(
+            attrsDataArray.getString(R.styleable.ContinuousSliderDff_sliderLabelText).orEmpty()
+        )
 
 
-        val textPadding = attrsDataArray.getDimensionPixelSize(R.styleable.ContinuousSliderDff_thumbTextPadding,0)
-        if(textPadding>0) {
+        val textPadding = attrsDataArray.getDimensionPixelSize(
+            R.styleable.ContinuousSliderDff_thumbTextPadding,
+            context.resources.getDimensionPixelSize(R.dimen.dimen_36dp)
+        )
+        if (textPadding > 0) {
             setTextPadding(textPadding)
         }
 
-        val thumbOffset = attrsDataArray.getDimensionPixelSize(R.styleable.ContinuousSliderDff_android_thumbOffset,0)
-        if(thumbOffset > 0) {
+        val thumbOffset = attrsDataArray.getDimensionPixelSize(
+            R.styleable.ContinuousSliderDff_android_thumbOffset,
+            0
+        )
+        if (thumbOffset > 0) {
             setThumbOffset(thumbOffset)
         }
 
-        isDecimalFormat = attrsDataArray.getBoolean(R.styleable.ContinuousSliderDff_decimalFormat,false)
+        isDecimalFormat =
+            attrsDataArray.getBoolean(R.styleable.ContinuousSliderDff_decimalFormat, false)
 
-      // if(thu)
+        // if(thu)
         attrsDataArray.recycle()
 
     }
 
-    fun setStepSize(stepSize : Float){
+    fun setStepSize(stepSize: Float) {
         binding.slider.stepSize = stepSize
     }
 
-    fun setValueFrom(valueFrom : Float){
+    fun setValueFrom(valueFrom: Float) {
         binding.slider.valueFrom = valueFrom
+        // Update SeekBar's minimum to match Slider's valueFrom if applicable
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            binding.seekBarIndicator.min = valueFrom.toInt()
+        } // Make sure SeekBar supports this method or adjust accordingly
+        // Update any dependent UI or logic here if needed
     }
 
-    fun setValueTo(valueTo : Float){
+    fun setValueTo(valueTo: Float) {
         binding.slider.valueTo = valueTo
+        // Update SeekBar's maximum to match Slider's valueTo
+        binding.seekBarIndicator.max = valueTo.roundToInt()
+        // Update any dependent UI or logic here if needed
     }
+
 
     fun setThumbOffset(thumbOffset: Int) {
         binding.seekBarIndicator.thumbOffset = thumbOffset
@@ -231,14 +249,14 @@ class IMContinuousSliderWithLabel @JvmOverloads constructor(
         sliderValue = value
     }
 
-    fun setUnEventSteps(isEvenStep: Boolean = true, list: List<Int>){
+    fun setUnEventSteps(isEvenStep: Boolean = true, list: List<Int>) {
         isUnEventSteps = true
         binding.slider.stepSize = 1.0F
         binding.slider.valueTo = list.size - 1.0F
         binding.slider.valueFrom = 0.0F
 
         binding.seekBarIndicator.progress = 0
-        binding.seekBarIndicator.max = list.size-1
+        binding.seekBarIndicator.max = list.size - 1
 
         listItemArr = list
 
@@ -256,33 +274,31 @@ class IMContinuousSliderWithLabel @JvmOverloads constructor(
     /**
      * This function is used to get Slider value in Float
      */
-    fun getValues(): Float = if(isUnEventSteps) {
+    fun getValues(): Float = if (isUnEventSteps) {
         listItemArr?.get(binding.slider.value.toInt())!!.toFloat()
-    }else binding.slider.value
+    } else binding.slider.value
 
-    fun setDecimalFormat(pattern : String){
+    fun setDecimalFormat(pattern: String) {
         decim = DecimalFormat(pattern)
     }
 
-    fun setOnTrackerListener(listener: SeekbarChangeListener){
+    fun setOnTrackerListener(listener: SeekbarChangeListener) {
         changeListener = listener
     }
 
-    fun addOnSliderTouchListener(listener: OnSliderTouchListener){
+    fun addOnSliderTouchListener(listener: OnSliderTouchListener) {
         sliderListener = listener
     }
 
-    interface SeekbarChangeListener{
+    interface SeekbarChangeListener {
         fun onProgress(seekBar: SeekBar?, progressValue: Int)
         fun onStartTracking(seekBar: SeekBar?)
         fun onStopTracking(seekBar: SeekBar?)
     }
 
-    interface OnSliderTouchListener{
+    interface OnSliderTouchListener {
         fun onStartTrackingTouch(slider: Slider)
         fun onStopTrackingTouch(slider: Slider)
     }
-
-
 
 }
