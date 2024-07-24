@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="payment_req">
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:textColor">#333638</item>
+    </style>
+
+    <style name="skip_for_no">
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textColor">#333638</item>
+    </style>
+
+
+    <style name="error_messa">
+        <item name="android:textSize">10sp</item>
+        <item name="lineHeight">@dimen/dimen_12dp</item>
+        <item name="android:letterSpacing">0.03</item>
+        <item name="android:textColor">#D8272D</item>
+        
+    </style>
+
+    <style name="BottomSheet" parent="Widget.Design.BottomSheet.Modal">
+    </style>
+
+    <style name="BottomSheetTheme" parent="Theme.Design.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/BottomSheet</item>
+        <item name="android:windowSoftInputMode">adjustResize|stateAlwaysVisible</item>
+    </style>
+
+    <style name="MPINBottomSheetTheme" parent="Theme.Design.BottomSheetDialog">
+        <item name="android:windowSoftInputMode">adjustResize|stateAlwaysVisible</item>
+    </style>
+
+
+
+    <style name="OTPBottomSheetTheme" parent="Theme.Design.BottomSheetDialog">
+        <item name="android:windowSoftInputMode">adjustResize|stateAlwaysVisible</item>
+    </style>
+
+    <style name="CustomBottomSheetDialogTheme" parent="Theme.Design.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/CustomBottomSheetStyle</item>
+    </style>
+
+    <style name="CustomBottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@color/bg_grey</item>
+    </style>
+
+    <style name="confirm_details">
+        <item name="android:textSize">20sp</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="paying">
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textColor">#7D8287</item>
+    </style>
+
+    <style name="input_text">
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:textColor">#7D8287</item>
+    </style>
+
+
+    <style name="pre_confirm">
+        <item name="android:textSize">@dimen/dimen_20sp</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="input_text_value">
+        <item name="android:textSize">28sp</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:textColor">#333638</item>
+    </style>
+
+    <style name="taxes_will">
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textColor">#333638</item>
+    </style>
+
+    <style name="ticket_recip">
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textColor">#202428</item>
+        <item name="lineHeight">20dp</item>
+        
+    </style>
+    <style name="ticket_date">
+        <item name="android:textSize">@dimen/dimen_12sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textColor">@color/grey_140</item>
+        <item name="lineHeight">@dimen/dimen_16dp</item>
+        
+    </style>
+
+    <style name="on_date">
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textColor">#202428</item>
+    </style>
+
+    <style name="to_name">
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textColor">#202428</item>
+    </style>
+
+    <style name="to_bank">
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textColor">#7D8287</item>
+    </style>
+
+    <style name="from_bank">
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textColor">#333638</item>
+    </style>
+
+    <!--OTP Drawer Style-->
+    <style name="verify_otp">
+        <item name="android:textSize">16sp</item>
+        <item name="lineHeight">@dimen/dimen_20dp</item>
+        <item name="android:letterSpacing">0.03</item>
+        <item name="android:textColor">#333638</item>
+        
+    </style>
+
+    <style name="we_ve_sent_">
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textColor">#202428</item>
+        
+    </style>
+
+    <style name="button">
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <style name="enter_otp">
+        <item name="android:textSize">14sp</item>
+        <item name="lineHeight">@dimen/dimen_16dp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textColor">#333638</item>
+        
+    </style>
+
+    <style name="otp_input_text">
+        <item name="android:textSize">40sp</item>
+        <item name="android:letterSpacing">0.2</item>
+        <item name="android:textColor">#202428</item>
+        
+    </style>
+
+
+    <!-- Mpin Drawer-->
+    <style name="enter_4_dig">
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:textColor">#333638</item>
+        
+    </style>
+
+    <style name="categories">
+        <item name="android:textSize">20sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="android:textColor">#FFFFFF</item>
+        
+    </style>
+
+    <style name="mpin_input_text">
+        <item name="android:textSize">40sp</item>
+        <item name="android:letterSpacing">0.2</item>
+        <item name="android:textColor">#333638</item>
+        
+    </style>
+
+
+    <style name="nav_title_text">
+        <item name="android:textSize">20sp</item>
+        <item name="lineHeight">24dp</item>
+        <item name="android:letterSpacing">0.0075</item>
+        <item name="android:textColor">#FFFFFF</item>
+        
+    </style>
+
+
+    <style name="DEFAULT_EMPTY_DRAWER_TITLE_STYLE">
+        <item name="android:textSize">16sp</item>
+        <item name="lineHeight">20dp</item>
+        <item name="android:letterSpacing">0.015</item>
+        <item name="android:textColor">@color/grey_140</item>
+        
+    </style>
+
+    <!--Mini Success Drawer-->
+    <style name="header_text">
+        <item name="android:textSize">16sp</item>
+        <item name="lineHeight">20sp</item>
+        <item name="android:letterSpacing">0.015</item>
+        <item name="android:textColor">#FFFFFF</item>
+        
+    </style>
+
+    <style name="sub_header_text">
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:textColor">#FFFFFF</item>
+        
+    </style>
+
+    <!-- Caution Drawer -->
+    <style name="caution_you_are">
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textColor">#64696D</item>
+        
+    </style>
+
+    <style name="caution_remember_we">
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textColor">#202428</item>
+        
+    </style>
+
+</resources>

@@ -1,15 +1,48 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
+    android:padding="@dimen/dimen_16dp"
     tools:context=".MainActivity">
 
 
-    <com.github.mikephil.charting.charts.LineChart
-        android:id="@+id/lineChart"
-        android:layout_width="@dimen/dimen_200dp"
-        android:layout_height="@dimen/dimen_200dp" />
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:cardElevation="@dimen/dimen_4dp"
+        android:layout_marginTop="@dimen/dimen_4dp"
+        app:cardCornerRadius="@dimen/dimen_16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/text_input_layout"
+        app:layout_constraintEnd_toEndOf="@+id/text_input_layout"
+        app:layout_constraintStart_toStartOf="@+id/text_input_layout"
+        app:layout_constraintTop_toTopOf="@+id/text_input_layout" />
 
-</RelativeLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_input_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/dimen_4dp"
+        app:boxCornerRadiusBottomEnd="@dimen/dimen_16dp"
+        app:boxCornerRadiusBottomStart="@dimen/dimen_16dp"
+        app:boxCornerRadiusTopEnd="@dimen/dimen_16dp"
+        app:boxCornerRadiusTopStart="@dimen/dimen_16dp"
+        app:boxStrokeWidthFocused="2dp"
+        app:boxStrokeWidth="2dp"
+        app:boxStrokeColor="@color/error"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Label"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

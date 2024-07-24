@@ -9,4 +9,421 @@
         <item>Friday</item>
         <item>Saturday</item>
     </string-array>
+
+    <string name="button">Button</string>
+    <string name="fab_button">expandable fab Button</string>
+    <string name="stack_btn_payee">New payee</string>
+    <string name="stack_btn_upi">Try UPI</string>
+    <string name="stack_btn_notify">Notify us</string>
+    <string name="stack_btn_share">Share</string>
+    <string name="Start_date">Start date</string>
+    <string name="end_date">End date</string>
+    <string name="dest_btn_query">Raise query</string>
+    <string name="swipe_to_pay_text">Swipe to pay</string>
+    <string name="swipe_to_cancel">Release to cancel</string>
+    <string name="str_title">Title</string>
+    <string name="str_subline">Subline</string>
+    <string name="str_content_des">Content Description</string>
+    <string name="action_dot_str">3 dot Icon</string>
+    <string name="tap_to_upload">Tap to upload image</string>
+    <string name="str_your_recent">Your recent transactions will show up here</string>
+
+    <string name="some_id">\u20B9 50,05,088</string>
+    <string name="mar_22">17 Mar \'22</string>
+    <string name="label">Text Label</string>
+    <string name="imps">IMPS</string>
+    <string name="movies">Movies</string>
+    <string name="amount">56</string>
+    <string name="time">5:50 AM</string>
+    <string name="rupee">\u20B9 %1$s</string>
+    <string name="dff_rupee">\u20B9 %1$s</string>
+    <string name="rupeeSign">₹</string>
+
+    <string name="days_label">Days Label</string>
+    <string name="percentage_label">Label</string>
+    <string name="icon_close">icon to close</string>
+    <string name="icon_top">icon to top</string>
+    <string name="multiple_txt">Multiple</string>
+
+    <string name="term_text">The exact terms and condition not apply in DFF document.</string>
+    <string name="checkbox_text">This will be the text box length</string>
+    <string name="checkbox_terms_condition">Checkbox with terms and condition</string>
+
+    <string name="payment_req">Payment requests</string>
+    <string name="rs">\u20B9</string>
+    <string name="skip"><u>Skip for now</u></string>
+    <string name="txt_open_drawer">Open Drawer</string>
+    <string name="txt_move_to_mpin_page">Move To MPIN Page</string>
+    <string name="txt_enter_4_digit_pin">Enter 4 digit PIN</string>
+    <string name="cursor">|</string>
+    <string name="wrong_mpin_description">
+You have 2/3 attempts to enter correct 4- digit iMobile PIN. Failure to do so will result in your account being suspended.
+</string>
+
+    <string name="icon_to_display">icon to display</string>
+    <string name="show_balance">Show balance</string>
+    <string name="insufficient_balance">Insufficient balance</string>
+    <string name="created">Created</string>
+    <string name="last_paid">Last Paid</string>
+    <string name="next_payment">Next Payment</string>
+    <string name="to">To</string>
+    <string name="start_date">Start Date</string>
+    <string name="choose">Choose</string>
+    <string name="select_time">Select time</string>
+    <string name="cancel">Cancel</string>
+    <string name="select">Select</string>
+    <string name="ok">Ok</string>
+    <string name="favourite">Favourites</string>
+    <string name="manage">Manage</string>
+    <string name="view_all">View all</string>
+    <string name="parik">Parag Parikh Flexi Cap Fun...</string>
+    <string name="id">••••</string>
+    <string name="icon">PPFAS</string>
+    <string name="AccountDepositCard">AccountDepositCard</string>
+    <string name="upi">UPI</string>
+    <string name="shimmer_layout_txt">ShimmerLayout</string>
+
+
+    <string name="dismi_what_are_favourites">What are favourites?</string>
+    <string name="dismi_fav_text">Favourites are contacts you pay frequently, and will always be easily accessible</string>
+    <string name="mobile_number_text">Mobile Number</string>
+
+    <!-- Grid Strings -->
+    <string name="str_d">D</string>
+    <string name="str_f">F</string>
+    <string name="str_p">P</string>
+
+
+    <!--    Slider Strings-->
+
+    <string name="Cont_str">Continuous Slider</string>
+    <string name="Rng_str">Range Slider</string>
+    <!--Chip Strings -->
+    <string name="chip_text">Coffee</string>
+    <string name="chip_title">Coffee</string>
+    <string name="username1">Divya Ahuja</string>
+    <string name="username2">Karan Singh</string>
+    <string name="et_hint">Add Your Comment Here</string>
+    <string name="et_hint2">select payee Here</string>
+    <string name="tv_header">Comment Chips</string>
+    <string name="tv_header2">Add Payee Chips</string>
+    <string name="tv_header3">Tab Selector (Single Selection)</string>
+    <string name="single_cancel">Single Selection with cancel icon</string>
+    <string name="tv_header4">Small Chips</string>
+    <string name="tv_transactions">No transactions found</string>
+    <!--Small chip Strings -->
+    <string name="small_chip_title">Type</string>
+    <string name="tv_small_chip1">Default send</string>
+    <string name="tv_small_chip2">Default receive</string>
+
+    <!-- Empty Bottom Sheet Drawer -->
+    <string name="paying">Paying</string>
+    <string name="input_text">\u20B9</string>
+    <string name="taxes_will">\u20B9 5 +taxes will apply</string>
+    <string name="on_date">On date</string>
+    <!-- Progress Indicator  -->
+    <string name="processing_your_payment">Processing your payment</string>
+    <string name="payment_started">Payment started</string>
+
+    <!--Tile Group-->
+    <string name="str_show_more">More</string>
+    <string name="str_show_less">Less</string>
+
+    <string name="add_a_comment">Add a comment</string>
+    <string name="enter_amt_str">Enter amount</string>
+
+    <!--OTP Drawer-->
+    <string name="str_verify_otp">Verify OTP</string>
+    <string name="txt_otp_sent">We’ve sent you an OTP to your registered phone number. Please enter it below to add this payee.</string>
+    <string name="enter_otp">Enter OTP</string>
+    <string name="txt_resend_otp">Resend OTP</string>
+    <string name="txt_otp_verified">OTP Verified</string>
+    <string name="txt_otp_resend_success">OTP has been resent</string>
+    <string name="txt_otp_incorrect_otp">You have entered an incorrect OTP</string>
+    <string name="txt_otp_error_msg">You have entered an incorrect OTP</string>
+    <string name="txt_note">Note</string>
+    <string name="otp_note">Please be aware that there is a risk posed by cyber fraud, specifically affecting emails. In the of</string>
+    <string name="txt_read_more">Read more</string>
+    <string name="txt_read_less">Read less</string>
+
+    <!--Payment Drawer-->
+    <string name="str_confirm">Confirm</string>
+
+    <!--Menu OverLay-->
+    <string name="menu_log_out">Logout</string>
+    <string name="menu_upi_profile">UPI Profile</string>
+    <string name="menu_quick_actions">Quick actions</string>
+    <string name="menu_iPal">iPal</string>
+    <string name="menu_dashboard">Dashboard</string>
+    <string name="menu_search">search</string>
+    <string name="menu_my_profile">MyProfile</string>
+    <string name="menu_last_logged_in">Last logged in: %1$s</string>
+    <string name="menu_app_version">App version %1$s</string>
+
+    <!--    Mpin Drawer-->
+    <string name="error_messa">You have entered an incorrect MPIN</string>
+    <string name="text_authenticate_with_mpin">Authenticate with MPIN</string>
+    <string name="mpin_description">We require you to enter <b>4 digit iMobile PIN</b> to complete the authentication</string>
+    <!--Purpose Tracker-->
+    <string name="str_step_label">Step</string>
+    <string name="str_step_label_divider_symbol">/</string>
+    <string name="str_progress_tracker_light_label">Progress Tracker Light View</string>
+    <string name="str_progress_tracker_dark_label">Progress Tracker Dark View</string>
+
+    <!--    Credit card-->
+    <string name="card_name">MakeMyTripddddddddddd</string>
+    <string name="card_number">\u2022\u2022\u2022\u20229022</string>
+
+    <!-- NRO/NRE -->
+    <string name="str_nre_alt">You can transfer funds to this Payee only after 30 mins of adding them.</string>
+
+    <!--edittext-->
+    <string name="IMTertiaryBtn">TextFieldWithTertiaryBtn</string>
+    <string name="IMEditTextWithCount">EditTextWithCount</string>
+    <string name="IMMaskedTextfield">MaskedTextField</string>
+    <string name="IMMultilineTextField">MultilineTextField</string>
+    <string name="IMTextFieldStyle1">IMTextFieldStyle1</string>
+    <string name="IMTextFieldStyle2">IMTextFieldStyle2</string>
+    <string name="Verified">Verified</string>
+    <string name="VerifyPending">Verify</string>
+    <!-- SpannableTextutility -->
+    <string name="MultipleLine_of_text">
+        With iMobile Pay, transferring funds is very simple and convenient. There are various options provided for transferring funds.
+        With iMobile Pay, transferring funds is very simple and convenient. There are various options provided for transferring funds.
+        With iMobile Pay, transferring funds is very simple and convenient. There are various options provided for transferring funds.
+        With iMobile Pay, transferring funds is very simple and convenient. There are various options provided for transferring funds.
+        With iMobile Pay, transferring funds is very simple and convenient. There are various options provided for transferring funds.
+        With iMobile Pay, transferring funds is very simple and convenient. There are various options provided for transferring funds.
+        With iMobile Pay, transferring funds is very simple and convenient. There are various options provided for transferring funds.
+        With iMobile Pay, transferring funds is very simple and convenient. There are various options provided for transferring funds.
+    </string>
+    <string name="text">With iMobile Pay, transferring funds is very simple and convenient. There are various options provided for transferring funds.
+            With iMobile Pay, transferring funds is very simple and convenient. There are various options provided for transferring funds.
+    </string>
+
+    <!--IMExploreCard-->
+    <string name="apply">How to apply for an\nInsta save account</string>
+    <string name="read_time">2 min read</string>
+
+    <string name="request_otp_message">Didn’t receive an OTP? <u>Resend OTP</u></string>
+    <string name="request_otp_message_time">Didn’t receive an OTP? Resend OTP in</string>
+
+    <string name="caution_fraud">Beware of fraud over phone!</string>
+    <string name="caution_payment">You are trying to make a payment while on call.Make sure you are paying the right person.</string>
+    <string name="caution_remember_we">Remember, we don\'t ever call to \n ask for MPIN or OTP.</string>
+    <string name="caution_understand">I understand</string>
+
+    <string name="infounit_text">Pre-mature withdrawals and closures will affect your interest rates</string>
+    <string name="amt_str">Amount in %1$s : %2$s</string>
+
+    <string name="upload_str">Upload</string>
+
+    <string-array name="CountryCodes">
+        <item>093,AF</item>
+        <item>355,AL</item>
+        <item>213,DZ</item>
+        <item>376,AD</item>
+        <item>244,AO</item>
+        <item>054,AR</item>
+        <item>374,AM</item>
+        <item>297,AW</item>
+        <item>061,AU</item>
+        <item>043,AT</item>
+        <item>994,AZ</item>
+        <item>973,BH</item>
+        <item>880,BD</item>
+        <item>375,BY</item>
+        <item>032,BE</item>
+        <item>501,BZ</item>
+        <item>229,BJ</item>
+        <item>975,BT</item>
+        <item>591,BO</item>
+        <item>387,BA</item>
+        <item>267,BW</item>
+        <item>055,BR</item>
+        <item>673,BN</item>
+        <item>359,BG</item>
+        <item>226,BF</item>
+        <item>095,MM</item>
+        <item>257,BI</item>
+        <item>855,KH</item>
+        <item>237,CM</item>
+        <item>001,CA</item>
+        <item>238,CV</item>
+        <item>236,CF</item>
+        <item>235,TD</item>
+        <item>056,CL</item>
+        <item>086,CN</item>
+        <item>061,CX</item>
+        <item>061,CC</item>
+        <item>057,CO</item>
+        <item>269,KM</item>
+        <item>242,CG</item>
+        <item>243,CD</item>
+        <item>682,CK</item>
+        <item>506,CR</item>
+        <item>385,HR</item>
+        <item>053,CU</item>
+        <item>357,CY</item>
+        <item>420,CZ</item>
+        <item>045,DK</item>
+        <item>253,DJ</item>
+        <item>670,TL</item>
+        <item>593,EC</item>
+        <item>020,EG</item>
+        <item>503,SV</item>
+        <item>240,GQ</item>
+        <item>291,ER</item>
+        <item>372,EE</item>
+        <item>251,ET</item>
+        <item>500,FK</item>
+        <item>298,FO</item>
+        <item>679,FJ</item>
+        <item>358,FI</item>
+        <item>033,FR</item>
+        <item>689,PF</item>
+        <item>241,GA</item>
+        <item>220,GM</item>
+        <item>995,GE</item>
+        <item>049,DE</item>
+        <item>233,GH</item>
+        <item>350,GI</item>
+        <item>030,GR</item>
+        <item>299,GL</item>
+        <item>502,GT</item>
+        <item>224,GN</item>
+        <item>245,GW</item>
+        <item>592,GY</item>
+        <item>509,HT</item>
+        <item>504,HN</item>
+        <item>852,HK</item>
+        <item>036,HU</item>
+        <item>091,IN</item>
+        <item>062,ID</item>
+        <item>098,IR</item>
+        <item>964,IQ</item>
+        <item>353,IE</item>
+        <item>044,IM</item>
+        <item>972,IL</item>
+        <item>039,IT</item>
+        <item>225,CI</item>
+        <item>081,JP</item>
+        <item>962,JO</item>
+        <item>007,KZ</item>
+        <item>254,KE</item>
+        <item>686,KI</item>
+        <item>965,KW</item>
+        <item>996,KG</item>
+        <item>856,LA</item>
+        <item>371,LV</item>
+        <item>961,LB</item>
+        <item>266,LS</item>
+        <item>231,LR</item>
+        <item>218,LY</item>
+        <item>423,LI</item>
+        <item>370,LT</item>
+        <item>352,LU</item>
+        <item>853,MO</item>
+        <item>389,MK</item>
+        <item>261,MG</item>
+        <item>265,MW</item>
+        <item>060,MY</item>
+        <item>960,MV</item>
+        <item>223,ML</item>
+        <item>356,MT</item>
+        <item>692,MH</item>
+        <item>222,MR</item>
+        <item>230,MU</item>
+        <item>262,YT</item>
+        <item>052,MX</item>
+        <item>691,FM</item>
+        <item>373,MD</item>
+        <item>377,MC</item>
+        <item>976,MN</item>
+        <item>382,ME</item>
+        <item>212,MA</item>
+        <item>258,MZ</item>
+        <item>264,NA</item>
+        <item>674,NR</item>
+        <item>977,NP</item>
+        <item>031,NL</item>
+        <item>599,AN</item>
+        <item>687,NC</item>
+        <item>064,NZ</item>
+        <item>505,NI</item>
+        <item>227,NE</item>
+        <item>234,NG</item>
+        <item>683,NU</item>
+        <item>850,KP</item>
+        <item>047,NO</item>
+        <item>968,OM</item>
+        <item>092,PK</item>
+        <item>680,PW</item>
+        <item>507,PA</item>
+        <item>675,PG</item>
+        <item>595,PY</item>
+        <item>051,PE</item>
+        <item>063,PH</item>
+        <item>870,PN</item>
+        <item>048,PL</item>
+        <item>351,PT</item>
+        <item>001,PR</item>
+        <item>974,QA</item>
+        <item>040,RO</item>
+        <item>007,RU</item>
+        <item>250,RW</item>
+        <item>590,BL</item>
+        <item>685,WS</item>
+        <item>378,SM</item>
+        <item>239,ST</item>
+        <item>966,SA</item>
+        <item>221,SN</item>
+        <item>381,RS</item>
+        <item>248,SC</item>
+        <item>232,SL</item>
+        <item>065,SG</item>
+        <item>421,SK</item>
+        <item>386,SI</item>
+        <item>677,SB</item>
+        <item>252,SO</item>
+        <item>027,ZA</item>
+        <item>082,KR</item>
+        <item>034,ES</item>
+        <item>094,LK</item>
+        <item>290,SH</item>
+        <item>508,PM</item>
+        <item>249,SD</item>
+        <item>597,SR</item>
+        <item>268,SZ</item>
+        <item>046,SE</item>
+        <item>041,CH</item>
+        <item>963,SY</item>
+        <item>886,TW</item>
+        <item>992,TJ</item>
+        <item>255,TZ</item>
+        <item>066,TH</item>
+        <item>228,TG</item>
+        <item>690,TK</item>
+        <item>676,TO</item>
+        <item>216,TN</item>
+        <item>090,TR</item>
+        <item>993,TM</item>
+        <item>688,TV</item>
+        <item>971,AE</item>
+        <item>256,UG</item>
+        <item>044,GB</item>
+        <item>380,UA</item>
+        <item>598,UY</item>
+        <item>001,US</item>
+        <item>998,UZ</item>
+        <item>678,VU</item>
+        <item>039,VA</item>
+        <item>058,VE</item>
+        <item>084,VN</item>
+        <item>681,WF</item>
+        <item>967,YE</item>
+        <item>260,ZM</item>
+        <item>263,ZW</item>
+    </string-array>
+
 </resources>
