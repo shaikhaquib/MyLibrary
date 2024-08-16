@@ -159,7 +159,8 @@ class IMBarChart @JvmOverloads constructor(
         animator: ChartAnimator,
         viewPortHandler: ViewPortHandler,
         private val mRadius: Int
-    ) : BarChartRenderer(chart, animator, viewPortHandler) {
+    ) : BarChartRenderer(chart, animator, viewPortHandler)
+    {
 
         private val mBarShadowRectBuffer = RectF()
 
